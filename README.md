@@ -18,7 +18,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <br>
 
 ## 🕹️ Demo:
-Try this link 👉 https://pkruczek22.github.io/to-do-list/
+Try this link 👉 https://pkruczek22.github.io/to-do-list-react/
 
 <br>
 
