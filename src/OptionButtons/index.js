@@ -3,7 +3,7 @@ import "./style.css"
 const OptionButtons = ({ tasks, hideDoneTasks }) => (
   <div className=" optionButtonsContainer">
     {tasks.length > 0 && (
-      <React.Fragment>
+      <>
         <button
           className="optionButton"
           disabled={!tasks.some(({ done }) => done)}
@@ -16,7 +16,7 @@ const OptionButtons = ({ tasks, hideDoneTasks }) => (
         >
           Ukończ wszystkie
         </button>
-      </React.Fragment>
+      </>
     )}
   </div>
 );
