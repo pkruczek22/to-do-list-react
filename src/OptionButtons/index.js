@@ -1,4 +1,3 @@
-import React from "react"
 import "./style.css"
 
 const OptionButtons = ({ tasks, hideDoneTasks }) => (
@@ -20,7 +19,6 @@ const OptionButtons = ({ tasks, hideDoneTasks }) => (
       </React.Fragment>
     )}
   </div>
-
 );
 
 export default OptionButtons;
