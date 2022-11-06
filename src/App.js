@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import Form from "./Form"
 import Tasks from "./Tasks"
 import OptionButtons from "./OptionButtons"
@@ -6,17 +6,30 @@ import Section from "./Section"
 import Header from "./Header"
 import Container from "./Container"
 
-const tasks = [
-  { id: 1, content: "przejść na reacta", done: false },
-  { id: 2, content: "zjeść obiad", done: true },
-];
-
 function App() {
-const [hideDone, setHideDone] = useState(false);
+  const [hideDone, setHideDone] = useState(false);
+  const [tasks, setTasks] = useState([
+    { id: 1, content: "przejść na reacta", done: false },
+    { id: 2, content: "zjeść obiad", done: true },
+  ]);
 
-const toggleHideDone = () => {
-  setHideDone(hideDone => !hideDone);
-}; 
+  const toggleHideDone = () => {
+    setHideDone(hideDone => !hideDone);
+  };
+
+  const removeTask = (id) => {
+    setTasks(tasks => tasks.filter(task => task.id !== id));
+  };
+
+  const toggleTaskDone = (id) => {
+    setTasks(tasks => tasks.map(task => {
+      if (task.id === id) {
+        return { ...task, done: !task.done };
+      }
+
+      return task;
+    }));
+  };
 
   return (
     <Container>
@@ -28,13 +41,17 @@ const toggleHideDone = () => {
       <Section
         title="Lista zadań"
         body={
-          <Tasks tasks={tasks} hideDone={hideDone} />
+          <Tasks
+            tasks={tasks}
+            hideDone={hideDone}
+            removeTask={removeTask}
+            toggleTaskDone={toggleTaskDone} />
         }
         extraHeaderContent={
-          <OptionButtons 
-          tasks={tasks} 
-          hideDone={hideDone} 
-          toggleHideDone = {toggleHideDone}
+          <OptionButtons
+            tasks={tasks}
+            hideDone={hideDone}
+            toggleHideDone={toggleHideDone}
           />
         }
       />
