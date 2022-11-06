@@ -1,12 +1,13 @@
 import "./style.css"
 
-const OptionButtons = ({ tasks, hideDone }) => (
+const OptionButtons = ({ tasks, hideDone, toggleHideDone }) => (
   <div className=" optionButtonsContainer">
     {tasks.length > 0 && (
       <>
         <button
           className="optionButton"
           disabled={!tasks.some(({ done }) => done)}
+          onClick={toggleHideDone}
         >
           {hideDone ? "Pokaż ukończone" : "Ukryj ukończone"}
         </button>
