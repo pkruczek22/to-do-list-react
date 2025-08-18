@@ -12,14 +12,24 @@ function App() {
     { id: 1, content: "Zrobić obiad", done: false },
     { id: 2, content: "Pójść na spacer", done: true }
   ]);
+  
+    const toggleHideDone = () => {
+      setHideDone(hideDone => !hideDone)
+    };
 
   const removeTask = (id) => {
     setTasks(tasks => tasks.filter(task => task.id !== id));
   };
 
-  const toggleHideDone = () => {
-    setHideDone(hideDone => !hideDone)
-  }
+  const toggleTaskDone = (id) => {
+    setTasks(tasks => tasks.map(task => {
+      if(task.id === id) {
+        return {...task, done: !task.done}
+      }
+
+      return task
+    }));
+  };
 
   return (
     <Container>
@@ -39,6 +49,7 @@ function App() {
             tasks={tasks}
             hideDone={hideDone}
             removeTask={removeTask}
+            toggleTaskDone={toggleTaskDone}
           />
         }
       />
