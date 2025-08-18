@@ -37,8 +37,28 @@
 
 .tasksList__button--markDone {
    background-color: green;
+   transition: 0.4s;
+}
+
+.tasksList__button--markDone:hover {
+    background-color: hsl(120, 100%, 35%);
+    outline: none;
+}
+
+.tasksList__button--markDone:active {
+    background-color: hsl(120, 100%, 45%);
 }
 
 .tasksList__button--deleteTask {
-    background-color: red;
+    background-color: crimson;
+    transition: 0.4s;
+}
+
+.tasksList__button--deleteTask:hover {
+    background-color: hsl(348, 83%, 54%);
+    outline: none;
+}
+
+.tasksList__button--deleteTask:active {
+    background-color: hsl(348, 83%, 60%);
 }
