@@ -1,10 +1,11 @@
 import "./style.css";
 
-const Buttons = ({ tasks, hideDone }) => (
+const Buttons = ({ tasks, hideDone, toggleHideDone }) => (
     <div className="buttonsContainer">
         {tasks.length > 0 && (
             <>
                 <button
+                    onClick={toggleHideDone}
                     className="optionButton"
                     disabled={tasks.every(({ done }) => !done)}>
                     {hideDone ? "Pokaż" : "Ukryj"} ukończone
