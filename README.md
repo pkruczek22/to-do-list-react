@@ -7,6 +7,9 @@ This web project was created as part of the Fornted Web Developer course. It is 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Demo
+Try this 👉 [to-do-list](https://pkruczek22.github.io/to-do-list-react/)
+
 ## Available Scripts
 
 In the project directory, you can run:
