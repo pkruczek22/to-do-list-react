@@ -7,12 +7,9 @@ import Header from "./Header";
 import Container from "./Container";
 
 function App() {
-  const userTasks = localStorage.getItem('tasks')
-    ? JSON.parse(localStorage.getItem('tasks'))
-    : [];
-
   const [hideDone, setHideDone] = useState(false);
-  const [tasks, setTasks] = useState(userTasks);
+  const [tasks, setTasks] = useState(() => JSON.parse(localStorage.getItem("tasks") || "[]")
+  );
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
