@@ -1,43 +1,41 @@
-.buttonsContainer {
+import styled from "styled-components";
+
+export const ButtonsContainer = styled.div`
     display: flex;
     padding: 15px 25px;
     align-self: center;
     justify-content: center;
     height: 100%;
-}
 
-@media (max-width:767px) {
-    .buttonsContainer {
+    @media (max-width:767px) {
         flex-direction: column;
         padding-top: 0px;
         min-height: 0px;
     }
-}
+`
 
-.optionButton {
+export const Button = styled.button`
     background: none;
     border: none;
     margin: 0px;
     color: hsl(180, 100%, 25%);
     padding: 0px 15px;
     transition: 0.4s;
-}
 
-@media (max-width:767px) {
-    .optionButton {
+    @media (max-width:767px) {
         padding: 10px 0px
     }
-}
 
-.optionButton:hover {
-   color: hsl(180, 100%, 35%); 
-   outline: none;
-}
+    &:hover {
+        color: hsl(180, 100%, 35%); 
+        outline: none;
+    }
 
-.optionButton:active {
-   color: hsl(180, 100%, 40%); 
-}
+    &:active {
+        color: hsl(180, 100%, 40%); 
+    }
 
-.optionButton:disabled {
-    color: #aaa;
-}
+    &:disabled {
+        color: #aaa;
+    }
+`
