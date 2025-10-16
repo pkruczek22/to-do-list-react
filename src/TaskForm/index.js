@@ -1,27 +1,27 @@
 import {useState} from 'react';
 import "./style.css";
+import { Form, Input, Button } from './styled';
 
-const Form = ({addNewTask}) => {
+const TaskForm = ({addNewTask}) => {
   const [newTaskContent, setNewTaskContent] = useState("");
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    addNewTask(newTaskContent.trim())
-    setNewTaskContent("")
-  }
+    addNewTask(newTaskContent.trim());
+    setNewTaskContent("");
+  };
 
   return (
-  <form className="form js-form" onSubmit={onFormSubmit}>
-    <input 
+  <Form onSubmit={onFormSubmit}>
+    <Input 
       value={newTaskContent}
       onChange={({target}) => setNewTaskContent(target.value)}
       type="text"
-      className="form__taskInput"
       placeholder="Co jest do zrobienia?"
     />
-    <button className="form__button">Dodaj zadanie</button>
-  </form>
-  )
-}
+    <Button>Dodaj zadanie</Button>
+  </Form>
+  );
+};
 
-export default Form;
+export default TaskForm;

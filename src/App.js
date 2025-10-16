@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Buttons from "./Buttons";
-import Form from "./Form";
+import TaskForm from "./TaskForm";
 import Tasks from "./Tasks";
 import Section from "./Section";
 import Header from "./Header";
@@ -57,7 +57,7 @@ function App() {
       <Header title={"Lista zadań"} />
       <Section
         title={"Dodaj nowe zadanie"}
-        body={<Form addNewTask={addNewTask} />}
+        body={<TaskForm addNewTask={addNewTask} />}
       />
       <Section
         title={"Lista zadań"}
