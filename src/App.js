@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Buttons from "./Buttons";
 import TaskForm from "./TaskForm";
 import Tasks from "./Tasks";
@@ -8,12 +7,7 @@ import Container from "./Container";
 import { useTasks } from './useTasks';
 
 function App() {
-  const { tasks, removeTask, toggleTaskDone, setAllDone, addNewTask } = useTasks();
-  const [hideDone, setHideDone] = useState(false);
-
-  const toggleHideDone = () => {
-    setHideDone(hideDone => !hideDone)
-  };
+  const { tasks, removeTask, toggleTaskDone, setAllDone, addNewTask, hideDone, toggleHideDone } = useTasks();
 
   return (
     <Container>
