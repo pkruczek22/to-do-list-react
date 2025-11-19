@@ -13,7 +13,7 @@ export const Header = styled.header`
     border-bottom: 2px solid #eee;
     align-items: center;
 
-    @media (max-width:767px) {
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px) {
         grid-template-columns: 1fr;
     }
 `

@@ -38,28 +38,28 @@ export const Button = styled.button`
     transition: 0.4s;
 
     ${({ markDone }) => markDone && css`
-        background-color: green;
+        background-color: ${({ theme }) => theme.colors.green.default};
 
         &:hover{
-            background-color: hsl(120, 100%, 35%);
+            background-color: ${({ theme }) => theme.colors.green.hover};
             outline: none;
         }
 
         &:active{
-            background-color: hsl(120, 100%, 45%);
+            background-color: ${({ theme }) => theme.colors.green.active};
         }
     `}
 
-    ${({deleteTask}) => deleteTask && css`
-        background-color: crimson;
+    ${({ deleteTask }) => deleteTask && css`
+        background-color: ${({ theme }) => theme.colors.crimson.default};
         
         &:hover{
-            background-color: hsl(348, 83%, 54%);
+            background-color: ${({ theme }) => theme.colors.crimson.hover};
             outline: none;
         }
 
         &:active{
-            background-color: hsl(348, 83%, 60%);
+            background-color: ${({ theme }) => theme.colors.crimson.active};
         }
     `}
 `

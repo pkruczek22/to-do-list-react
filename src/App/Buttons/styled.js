@@ -7,7 +7,7 @@ export const ButtonsContainer = styled.div`
     justify-content: center;
     height: 100%;
 
-    @media (max-width:767px) {
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px) {
         flex-direction: column;
         padding-top: 0px;
         min-height: 0px;
@@ -18,21 +18,21 @@ export const Button = styled.button`
     background: none;
     border: none;
     margin: 0px;
-    color: hsl(180, 100%, 25%);
+    color: ${({ theme }) => theme.colors.primary.default};
     padding: 0px 15px;
     transition: 0.4s;
 
-    @media (max-width:767px) {
+    @media (max-width:${({ theme }) => theme.breakpoints.mobile}px) {
         padding: 10px 0px
     }
 
     &:hover {
-        color: hsl(180, 100%, 35%); 
+        color: ${({ theme }) => theme.colors.primary.hover}; 
         outline: none;
     }
 
     &:active {
-        color: hsl(180, 100%, 40%); 
+        color: ${({ theme }) => theme.colors.primary.active}; 
     }
 
     &:disabled {
