@@ -25,7 +25,7 @@ export const Content = styled.span`
     align-content: center;
     word-break: break-word;
 
-    ${({ done }) => done && css`
+    ${({ $done }) => $done && css`
          text-decoration: line-through;
     `}
 `
@@ -37,7 +37,7 @@ export const Button = styled.button`
     color: #fff;
     transition: 0.4s;
 
-    ${({ markDone }) => markDone && css`
+    ${({ $markDone }) => $markDone && css`
         background-color: ${({ theme }) => theme.colors.green.default};
 
         &:hover{
@@ -50,7 +50,7 @@ export const Button = styled.button`
         }
     `}
 
-    ${({ deleteTask }) => deleteTask && css`
+    ${({ $deleteTask }) => $deleteTask && css`
         background-color: ${({ theme }) => theme.colors.crimson.default};
         
         &:hover{
