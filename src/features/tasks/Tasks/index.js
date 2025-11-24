@@ -1,12 +1,12 @@
-import Buttons from "./Buttons";
-import TaskForm from "./TaskForm";
-import Tasks from "./Tasks";
-import Section from "./Section";
-import Header from "./Header";
+import Buttons from "../Buttons";
+import TaskForm from "../TaskForm";
+import TasksList from "../TasksList";
+import Section from "../../../common/Section";
+import Header from "../../../common/Header";
 import { Container } from "./styled";
 import { useTasks } from './useTasks';
 
-function App() {
+function Tasks() {
   const { tasks, removeTask, toggleTaskDone, setAllDone, addNewTask, hideDone, toggleHideDone } = useTasks();
 
   return (
@@ -27,7 +27,7 @@ function App() {
           />
         }
         body={
-          <Tasks
+          <TasksList
             tasks={tasks}
             hideDone={hideDone}
             removeTask={removeTask}
@@ -39,4 +39,4 @@ function App() {
   );
 }
 
-export default App;
+export default Tasks;
