@@ -12,12 +12,6 @@ export const Form = styled.form`
 }
 `
 
-export const Input = styled.input`
-    height: 40px;
-    padding: 3px 10px;
-    border: 1px solid #eee;
-`
-
 export const Button = styled.button`
     max-width: fit-content;
     background-color: ${({ theme }) => theme.colors.primary.default};

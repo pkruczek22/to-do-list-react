@@ -27,7 +27,7 @@ const tasksSlice = createSlice({
             state.tasks.map(task => task.done = true);
         },
         fetchExampleTasks: () => { },
-        setFetchExempleTasksState: ( state, { payload: newState }) => {
+        setFetchExempleTasksState: (state, { payload: newState }) => {
             state.fetchExampleTasksState = newState;
         },
         setTasks: (state, { payload: tasks }) => {
@@ -44,7 +44,7 @@ export const {
     toggleTaskDone,
     setAllDone,
     fetchExampleTasks,
-    setFetchExempleTasksState, 
+    setFetchExempleTasksState,
     setTasks } = tasksSlice.actions;
 export const selectTasksState = ({ tasks }) => tasks;
 
@@ -55,6 +55,17 @@ export const selectIsEveryTaskDone = state => selectTasks(state).every(task => t
 export const selectIsAnyTaskDone = state => selectTasks(state).some(task => task.done);
 export const selectFetchExampleTasksState = state => selectTasksState(state).fetchExampleTasksState;
 
-export const getTaskById = (state, taskId) => selectTasks(state).find(task => task.id === taskId);
+export const getTaskById = (state, taskId) =>
+    selectTasks(state).find(task => task.id === taskId);
+
+export const selectTasksByQuery = (state, query) => {
+    const tasks = selectTasks(state);
+
+    if ( !query || query.trim() === "") {
+        return tasks;
+    };
+
+    return tasks.filter(task => task.content.toLowerCase().includes(query.trim().toLowerCase()));
+}
 
 export default tasksSlice.reducer;
