@@ -1,11 +1,11 @@
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
+import { BrowserRouter, HashRouter, Redirect, Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 import TasksPage from "./features/tasks/TasksPage";
 import TaskPage from "./features/tasks/TaskPage";
 import Author from "./features/author/AuthorPage";
 import { Nav, NavList, StyledNavLink } from "./styled";
 
 const App = () => (
-  <BrowserRouter basename="/to-do-list-react">
+  <HashRouter>
     <Nav>
       <NavList>
         <li><StyledNavLink to="/zadania" >Zadania</StyledNavLink></li>
@@ -26,7 +26,7 @@ const App = () => (
         <Redirect to="/zadania" />
       </Route>
     </Switch>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default App;
