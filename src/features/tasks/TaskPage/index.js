@@ -11,13 +11,14 @@ function TaskPage() {
     const { id } = useParams();
 
     const task = useSelector(state => getTaskById(state, id));
+    console.log(task)
 
   return (
     <Container>
       <Header title={"Szczegóły zadania"} />
       <Section
         title={task ? task.content : "Nie znaleziono zadania"}
-        body={<SectionContainer><strong>Wykonano:</strong> {task.done ? "Tak" : "Nie"}</SectionContainer>}
+        body={task ? <SectionContainer><strong>Wykonano:</strong> {task.done ? "Tak" : "Nie"}</SectionContainer> : ""}
       />
     </Container>
   );
