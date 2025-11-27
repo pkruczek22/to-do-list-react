@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { styled, css } from "styled-components";
 
 export const List = styled.ul`
@@ -62,4 +63,22 @@ export const Button = styled.button`
             background-color: ${({ theme }) => theme.colors.crimson.active};
         }
     `}
+`
+
+export const StyledLink = styled(Link)`
+    color: ${({theme}) => theme.colors.primary.default};
+    text-decoration: none;
+    
+
+    &:visited {
+        color: ${({theme}) => theme.colors.primary.default};
+    }
+
+    &:hover {
+        color: ${({theme}) => theme.colors.primary.hover};
+    }
+
+    &:active {
+        color: ${({theme}) => theme.colors.primary.active};
+    }
 `
