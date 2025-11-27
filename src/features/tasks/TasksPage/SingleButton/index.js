@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import ButtonBase from "../ButtonBase";
-import { fetchExampleTasks, selectFetchExampleTasksState } from "../tasksSlice";
+import { fetchExampleTasks, selectFetchExampleTasksState } from "../../tasksSlice";
 
 
 const SingleButton = () => {

@@ -1,12 +1,12 @@
-import Buttons from "../Buttons";
+import Buttons from "./Buttons";
 import TaskForm from "../TaskForm";
-import TasksList from "../TasksList";
-import SingleButton from "../SingleButton";
+import TasksList from "./TasksList";
+import SingleButton from "./SingleButton";
 import Section from "../../../common/Section";
 import Header from "../../../common/Header";
-import { Container } from "./styled";
+import { Container } from "../../../common/Container";
 
-function Tasks() {
+function TasksPage() {
 
   return (
     <Container>
@@ -25,4 +25,4 @@ function Tasks() {
   );
 }
 
-export default Tasks;
+export default TasksPage;
